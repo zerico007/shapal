@@ -37,8 +37,8 @@ const StyledInput = styled.input<InputProps>`
   font-size: 14px;
 
   :focus {
-    border: ${(props) =>
-      props.border === "none" ? "none" : "2px solid var(--button-red)"};
+    outline: 2px solid var(--dark-green);
+    outline-offset: 2px;
   }
 `;
 
