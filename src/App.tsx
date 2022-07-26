@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Routes, Route } from "react-router-dom";
 
 import { NavBar, Input } from "./components";
 
@@ -26,16 +27,23 @@ function App() {
     <AppContainer className="App">
       <NavBar />
       <InnerContainer>
-        <Input
-          showLabel
-          label="Email"
-          id="email-input"
-          background="var(--grey)"
-          width="300px"
-          height="60px"
-          type="text"
-          placeholder="Email"
-        />
+        <Routes>
+          <Route
+            path="/shapal"
+            element={
+              <Input
+                showLabel
+                label="Email"
+                id="email-input"
+                background="var(--grey)"
+                width="300px"
+                height="60px"
+                type="text"
+                placeholder="Email"
+              />
+            }
+          />
+        </Routes>
       </InnerContainer>
     </AppContainer>
   );
