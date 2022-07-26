@@ -29,7 +29,7 @@ function App() {
       <InnerContainer>
         <Routes>
           <Route
-            path="/shapal"
+            path="/"
             element={
               <Input
                 showLabel
