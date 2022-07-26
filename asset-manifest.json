@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/shapal-art/static/css/main.3b5e9c17.css",
-    "main.js": "/shapal-art/static/js/main.31d28e37.js",
+    "main.js": "/shapal-art/static/js/main.d9eb07b1.js",
     "static/js/787.8b455d26.chunk.js": "/shapal-art/static/js/787.8b455d26.chunk.js",
     "index.html": "/shapal-art/index.html",
     "main.3b5e9c17.css.map": "/shapal-art/static/css/main.3b5e9c17.css.map",
-    "main.31d28e37.js.map": "/shapal-art/static/js/main.31d28e37.js.map",
+    "main.d9eb07b1.js.map": "/shapal-art/static/js/main.d9eb07b1.js.map",
     "787.8b455d26.chunk.js.map": "/shapal-art/static/js/787.8b455d26.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3b5e9c17.css",
-    "static/js/main.31d28e37.js"
+    "static/js/main.d9eb07b1.js"
   ]
 }
