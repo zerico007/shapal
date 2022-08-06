@@ -36,7 +36,8 @@ const buttonCSS = {
     border: 2px solid transparent;
 
     :hover {
-      border: 2px solid var(--dark-green);
+      background-color: var(--dark-green);
+      color: var(--bg-dark);
       transform: scale(1.1);
     }
   `,
