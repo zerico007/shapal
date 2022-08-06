@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Routes, Route } from "react-router-dom";
 
-import { NavBar, Input } from "./components";
+import { NavBar, ContactForm } from "./components";
 
 const AppContainer = styled.div`
   display: flex;
@@ -31,18 +31,16 @@ function App() {
           <Route
             path="/shapal-art"
             element={
-              <Input
-                showLabel
-                label="Email"
-                id="email-input"
-                background="var(--grey)"
-                width="300px"
-                height="60px"
-                type="text"
-                placeholder="Email"
-              />
+              <div>
+                <h1>Shapal Art</h1>
+                <p>
+                  This is a simple app that allows you to create and share your
+                  own art.
+                </p>
+              </div>
             }
           />
+          <Route path="/shapal-art/contact" element={<ContactForm />} />
         </Routes>
       </InnerContainer>
     </AppContainer>

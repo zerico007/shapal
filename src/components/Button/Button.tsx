@@ -6,6 +6,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   width?: string;
   height?: string;
   margin?: string;
+  mobileWidth?: string;
   content: string | ReactNode;
 }
 
@@ -17,7 +18,6 @@ const buttonCSS = {
 
     :hover {
       background-color: var(--dark-green);
-      transform: scale(1.1);
     }
   `,
   secondary: css`
@@ -64,6 +64,10 @@ const StyledButton = styled.button<Omit<ButtonProps, "content">>`
   border-radius: 0.2rem;
   transition: all 0.3s ease-in-out;
 
+  @media (max-width: 600px) {
+    width: ${(props) => props.mobileWidth};
+  }
+
   ${(props) => determineThemeCSS(props.theme)};
 `;
 
@@ -72,6 +76,7 @@ export default function Button({
   width = "10rem",
   height = "2.5rem",
   margin = "0.5rem",
+  mobileWidth = "300px",
   content,
   ...rest
 }: ButtonProps) {
@@ -81,6 +86,7 @@ export default function Button({
       theme={theme}
       width={width}
       height={height}
+      mobileWidth={mobileWidth}
       {...rest}
     >
       {content}

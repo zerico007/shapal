@@ -1,17 +1,18 @@
 import styled, { keyframes } from "styled-components";
 import { MdMenu, MdMenuOpen } from "react-icons/md";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 import { Button } from "..";
 
-const fadeInFromLeft = keyframes`
+const fadeInFromTopRight = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateY(-100%);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 `;
 
@@ -75,7 +76,7 @@ const ButtonsContainer = styled.div<{ mobileOpen: boolean }>`
     align-items: flex-end;
     padding-right: 1rem;
     justify-content: flex-start;
-    animation: ${fadeInFromLeft} 0.4s ease-in-out;
+    animation: ${fadeInFromTopRight} 0.4s ease-in-out;
     width: 100%;
     height: 100vh;
     background-color: ${(props) =>
@@ -93,20 +94,31 @@ function NavButtons({
   mobileOpen: boolean;
   toggleMobileMenu: () => void;
 }) {
+  const navigate = useNavigate();
+
   return (
     <ButtonsContainer
       className="nav-buttons"
       mobileOpen={mobileOpen}
-      onClick={toggleMobileMenu}
+      onClick={() => {
+        if (mobileOpen) {
+          toggleMobileMenu();
+        }
+      }}
     >
-      {["Home", "Art Work", "Contact Me"].map((word: string) => (
+      {[
+        { label: "Home", route: "/" },
+        { label: "Art Work", route: "/work" },
+        { label: "Contact Me", route: "/contact" },
+      ].map(({ label, route }) => (
         <Button
-          key={word}
+          key={label}
           theme="nav"
           width="auto"
           height="30px"
-          content={word}
+          content={label}
           type="button"
+          onClick={() => navigate(`/shapal-art${route}`)}
         />
       ))}
     </ButtonsContainer>
