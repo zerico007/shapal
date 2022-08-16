@@ -8,13 +8,17 @@ const StyledForm = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 400px;
+  width: 500px;
   height: auto;
   background-color: #fff;
   border-radius: 5px;
   padding: 1rem;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   color: var(--bg-dark);
+  animation: fadeIn 0.4s ease-in-out;
+
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 interface FormInputProps {
