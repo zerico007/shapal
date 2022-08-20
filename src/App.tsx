@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Routes, Route } from "react-router-dom";
 
-import { NavBar, ContactForm } from "./components";
+import { NavBar, ContactForm, WorkPage } from "./components";
 
 const AppContainer = styled.div`
   display: flex;
@@ -41,6 +41,7 @@ function App() {
             }
           />
           <Route path="/shapal-art/contact" element={<ContactForm />} />
+          <Route path="/shapal-art/work" element={<WorkPage />} />
         </Routes>
       </InnerContainer>
     </AppContainer>
